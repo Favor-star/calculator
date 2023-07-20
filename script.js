@@ -9,12 +9,17 @@ for(let  i = 0; i < 10; i++){
     let numbers = document.createElement('div');
 numbers.setAttribute('class', 'numbers');
 numbers.setAttribute('id', 'number-'+count);
+
 numbers.textContent = count;
 count++;
 if(i === 9){
     numbers.textContent = 0;
     numbers.setAttribute('id', 'number-'+0)
 }
+numbers.addEventListener('click', function(){
+    this.style.boxShadow = "3px 3px 3px black";
+    document.getElementById('progress').textContent = this.textContent;
+})
 buttonsDiv.appendChild(numbers);
 
 }
