@@ -2,17 +2,15 @@
 
 //VARIABLE'S DECLARATION
 let buttonsDiv = document.querySelector('.buttons');
-// let operators = document.getElementById('main-operators');
 let content = [];
-let displayValue =[];
 let screenDisply = document.getElementById('current');
-let progressDsply = document.getElementById('progress')
+let progressDsply = document.getElementById('progress');
 let isFnCalled = false;
-let result;
+let result = 0;
 let num1;
 let num2;
 let flag;
-let getSign
+let getSign;
 
 let count = 1;
 for(let  i = 0; i < 10; i++){
@@ -38,7 +36,7 @@ buttonsDiv.appendChild(point);
 
 //function to acqire numbers
 function getNumbers(){
-   
+    
     content.push(this.textContent);
     screenDisply.textContent = content.join('');
     for(let i = 0; i < content.length; i++){
@@ -67,26 +65,29 @@ negsign.addEventListener('click', function(){
     else {
         content.shift(value);
         screenDisply.textContent = content.join('');
-        
-       
-
     }
 });
 buttonsDiv.appendChild(negsign);
+
 
 //FUNCTION TO DISPLAY CONTENTS IN SCREEN
 function displayCont(value){
     content.push(value);
     displayValue.push(value);
     screenDisply.textContent = content.join('');
-    progressDsply.textContent = displayValue.join('');
-    
+    progressDsply.textContent = displayValue.join('');    
 }
+
  //ADDING EVENT LISTENER + FUNCTION TO CLEAR THE SCREEN 
  let clearBtn = document.getElementById('clear');
  clearBtn.addEventListener('dblclick', function(){
     clearing();
  });
+clearBtn.addEventListener('click', function(){
+    progressDsply.textContent = 0;
+    content.pop();
+    screenDisply.textContent = content.join('');
+});
  //CLEARING FUNCTION
  function clearing(){ 
     content=[];
@@ -103,8 +104,8 @@ function makeOperation(sign) {
         alert('num1:    ' +num1 + ',     num2:  ' + num2);
     }  
     else if(sign === "+"){
-        content.push('+');
         flag = 1;
+        content.push('+');
         screenDisply.textContent = content.join('');
         
     }
@@ -137,7 +138,7 @@ function makeOperation(sign) {
             result = num1 + num2;
             progressDsply.textContent = result;
             // screenDisply.textContent = content.join('');
-            // break;
+            break;
         case 2:
             result = num1 - num2;
             progressDsply.textContent = result;
@@ -156,15 +157,16 @@ function makeOperation(sign) {
             // content.push('/');
             // screenDisply.textContent = content.join('');
             break;
-            case "=":
+        //     case "=":
                 
 
-        // //     for(let i = 0; i < content.length; i++){
-        // //         num2 = parseFloat(content.slice((content.indexOf('+') +1 ), content.length).join(''));
-        // //     }
-        // // alert('num2:' +num2 + ', num1:' + num1);
-            break;
+        // // //     for(let i = 0; i < content.length; i++){
+        // // //         num2 = parseFloat(content.slice((content.indexOf('+') +1 ), content.length).join(''));
+        // // //     }
+        // // // alert('num2:' +num2 + ', num1:' + num1);
+        //     break;
     }
     // screenDisply.textContent = result;
 
 }
+
