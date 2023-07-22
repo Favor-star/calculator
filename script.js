@@ -101,7 +101,7 @@ function makeOperation(sign) {
         for(let i = 0; i < content.length; i++){
             num2 = parseFloat(content.slice((content.indexOf(getSign) +1 ), content.length).join(''));
         }
-        alert('num1:    ' +num1 + ',     num2:  ' + num2);
+        // alert('num1:    ' +num1 + ',     num2:  ' + num2);
     }  
     else if(sign === "+"){
         flag = 1;
