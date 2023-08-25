@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="images/icon.png"
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="images/icon.png" />
+  </head>
+  <body>
     <header>
-        <h1>ARTHIMETIC CALCULATOR</h1>
+      <h1>ARTHIMETIC CALCULATOR</h1>
     </header>
     <main id="calculator">
-        <p id="mark">Favor-star<sup id="regmark">&reg</sup></p>
-        <main id="calculator-body">
+      <p id="mark">Favor-star<sup id="regmark">&reg</sup></p>
+      <main id="calculator-body">
         <section class="screen">
-            <div class="screening" id="progress"></div>
-            <div class="screening" id="current"></div>
-
+          <div class="screening" id="progress"></div>
+          <div class="screening" id="current"></div>
         </section>
         <section class="keypad" id="main-keypad">
           <div class="buttons"></div>
 
-          <div class='operator' id="main-operators">
-            <button class="operands " id="clear">C</button>
-            <button class="operands operant" id="plus" >+</button>
-            <button class="operands operant" id="negative" >-</button>
-            <button class="operands operant" id="multiply" >X</button>
-            <button class="operands operant" id="divide" >/</button>
-            <button class="operands equal" id="equal-sign" onclick="makeOps()">=</button>
-            
-            
-          </div> 
+          <div class="operator" id="main-operators">
+            <button class="operands" id="clear">C</button>
+            <button class="operands operant" id="plus">+</button>
+            <button class="operands operant" id="negative">-</button>
+            <button class="operands operant" id="multiply">X</button>
+            <button class="operands operant" id="divide">/</button>
+            <button class="operands equal" id="equal-sign" onclick="makeOps()">
+              =
+            </button>
+          </div>
         </section>
+      </main>
     </main>
-
-    </main>
-    
-</body>
-<!-- <script src="script.js" defer></script> -->
-<script src="index.js"></script>
+  </body>
+  <!-- <script src="script.js" defer></script> -->
+  <script src="index.js"></script>
 </html>
