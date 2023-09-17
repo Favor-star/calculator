@@ -6,7 +6,6 @@ let values = [];
 let number1;
 let number2;
 let isSignCalled = false;
-
 // set buttons from 1-9
 let count = 1;
 for (let i = 0; i < 10; i++) {
@@ -65,9 +64,8 @@ function displayNumbers() {
   screenDisply.textContent = values.join("");
 }
 function makeOps() {
-  // alert(`${values.join("")}`);
   let sign;
-  for (let i = 0; i < values.length; i++) {
+  for (let i = 1; i < values.length; i++) {
     if (
       values[i] === "+" ||
       values[i] === "-" ||
@@ -75,15 +73,20 @@ function makeOps() {
       values[i] === "X"
     ) {
       sign = values[i];
-      number1 = parseFloat(values.slice(0, values.indexOf(sign)).join(""));
-      number2 = parseFloat(values.slice(values.indexOf(sign) + 1).join(""));
     }
   }
+  if (values[0] === sign) {
+    return values.shift();
+  }
+  number1 = parseFloat(values.slice(0, values.indexOf(sign)).join(""));
+  number2 = parseFloat(values.slice(values.indexOf(sign) + 1).join(""));
+
   if (sign === "+") {
     progressDsply.textContent = number1 + number2;
   } else if (sign === "-") {
-    alert(`${number1} and ${number2}`);
-    progressDsply.textContent = number1 - number2;
+    // if (isSignCalled)
+      // progressDsply.textContent = (-1 * number1) - number2;
+     progressDsply.textContent = isSignCalled ? (-1 * number1) - number2 : number1 - number2;
   } else if (sign === "/") {
     progressDsply.textContent = number1 / number2;
   } else if (sign === "X") {
